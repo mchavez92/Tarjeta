@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de la Cita</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: rgb(0, 0, 0)
+            /*background: #f3f1f5;*/
+        }
+
+        .tarjeta {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        h2 {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilos de las imágenes */
+        .imagen {
+            width: 350px; /* Ajusta el tamaño de las imágenes según necesites */
+            height: auto;
+        }
+
+        .izquierda {
+            align-self: flex-start;
+        }
+
+        .derecha {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <img src="colg1.jpg" alt="Imagen Izquierda" class="imagen izquierda">
+
+        <div class="tarjeta">
+            <h2>¡Es una Cita!</h2>
+            <p>Aqui los detalles</p>
+            
+            <div id="detalles">
+                <!-- Los detalles se mostrarán aquí -->
+                <p class="info">Lugar: Bon Beef</p>
+                <p class="info">Fecha: 06 de noviembre</p>
+                <p class="info"> 8:00pm</p>
+              
+                <img src="img1.jpg" alt="Imagen Izquierda" class="imagen izquierda">
+
+                <p class="info"> Te amo infinito</p>
+            </div>
+        </div>
+
+        <img src="colg2.jpg" alt="Imagen Derecha" class="imagen derecha">
+    </div>
+
+    <script>
+        function obtenerParametroUrl(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const lugar = obtenerParametroUrl("lugar");
+        const fecha = obtenerParametroUrl("fecha");
+        const hora = obtenerParametroUrl("hora");
+
+/*        if (lugar && fecha && hora) {
+            document.getElementById("detalles").innerHTML = `
+                <p class="info">Lugar: ${lugar}</p>
+                <p class="info">Fecha: ${fecha}</p>
+                <p class="info">Hora: ${hora}</p>
+            `;
+        } else {
+            document.getElementById("detalles").innerHTML = `
+                <p>Faltan algunos detalles para la cita.</p>
+            `;
+        }*/
+    </script>
+
+</body>
+</html>
